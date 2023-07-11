@@ -1,8 +1,10 @@
-export default abstract class Races {
-  // readonly _name: string;
-  // readonly _dexterity: number;
+abstract class Race {
+  readonly _name: string;
+  readonly _dexterity: number;
 
-  constructor(private _name: string, private _dexterity: number) {
+  constructor(name: string, dexterity: number) {
+    this._name = name;
+    this._dexterity = dexterity;
   }
 
   get name() : string {
@@ -17,5 +19,7 @@ export default abstract class Races {
     throw new Error('Not implemented');
   }
 
-  abstract maxLifePoints(): number;
+  abstract get maxLifePoints(): number;
 }
+
+export default Race;
