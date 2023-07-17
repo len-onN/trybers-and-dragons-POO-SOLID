@@ -74,8 +74,10 @@ export default class Character implements Fighter {
     let def;
     if (enD > (this._strength * 1.5)) {
       def = 0.8;
-    } else {
+    } else if (enD > this._strength) {
       def = 0.9;
+    } else {
+      def = 0.95;
     }
     const tot = (this._strength * 2) - def;
     enemy.receiveDamage(tot);
